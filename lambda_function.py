@@ -32,13 +32,13 @@ def lambda_handler(event, context):
     if not os.path.exists(LOCAL_MODEL_PATH):
         boto3.client("s3").download_file(BUCKET_NAME, REMOTE_MODEL_PATH, LOCAL_MODEL_PATH)
 
-    try:
-        trained_model = joblib.load(LOCAL_MODEL_PATH)
-    except (OSError, joblib.externals.loky.process_executor.TerminatedWorkerError):
-        return {"statusCode": 500, "body": "Error loading model"}
+
+        
+
 
     # Predict
     try:
+        trained_model = joblib.load(LOCAL_MODEL_PATH)
         input_data = pd.DataFrame([[model, yil, km, renk]])
         fiyat_prediction = trained_model.predict(input_data)
         fiyat = int(np.round(fiyat_prediction[0]))

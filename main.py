@@ -14,7 +14,7 @@ def lambda_handler(event, context):
 
     model_path = "/tmp/model.pkl"
     if not os.path.exists(model_path):
-        boto3.client("s3").download_file("awsbc8", "models/car.pkl", "/tmp/model.pkl")
+        boto3.client("s3").download_file("miull.com", "car.pkl", "/tmp/model.pkl")
 
     trained_model = joblib.load(model_path)
 

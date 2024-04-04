@@ -4,6 +4,7 @@ import pandas as pd
 import joblib
 import os
 import numpy as np
+import sklearn
 from sklearn.exceptions import NotFittedError
 
 # Constants

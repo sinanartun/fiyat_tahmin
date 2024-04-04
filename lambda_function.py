@@ -7,7 +7,7 @@ import numpy as np
 from sklearn.exceptions import NotFittedError
 
 # Constants
-BUCKET_NAME = 'fiyattahmin'
+BUCKET_NAME = 'miull.com'
 LOCAL_MODEL_PATH = "/tmp/car.pkl"
 REMOTE_MODEL_PATH = "car.pkl"
 ALLOWED_ORIGINS = ['https://miuulapp.github.rocks', 'http://localhost:3011']
